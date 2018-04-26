@@ -1,0 +1,26 @@
+See below for the code on how to encrypt/decrypt data using Symmetrical Encryption
+
+
+"""
+ENCRYPTION/DECRYPTION
+
+Fernet = Guarantee that the message cannot be read without the key 
+(i.e. Symmetric Encryption)
+
+"""
+import cryptography.fernet as f
+
+
+"""Generate Key"""
+key = f.Fernet.generate_key()
+k = f.Fernet(key)
+
+"""Text to Encrypt"""
+et = k.encrypt(b"AnalystRising")
+
+
+"""Decryption"""
+pt = k.decrypt(et)
+
+print(et)
+print(pt)
